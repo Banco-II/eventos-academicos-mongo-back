@@ -1,8 +1,7 @@
 const express = require("express");
-// const sequelize = require("./config/database");
 const app = express();
 app.use(express.json());
-const mapsRouter = require("./routes/maps-router");
+// const eventsRouter = require("./routes/events-router");
 
 const cors = require("cors");
 app.use(cors());
@@ -11,7 +10,7 @@ app.get("/home", (req, res, next) => {
   res.send("Hello!");
 });
 
-app.use(mapsRouter);
+app.use("/eventos", eventsRouter);
 
 const port = process.env.PORT || 4000;
 
