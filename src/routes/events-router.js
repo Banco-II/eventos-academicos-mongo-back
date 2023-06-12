@@ -7,6 +7,6 @@ eventsRouter.get("/", eventController.getEvents);
 eventsRouter.get("/:content", eventController.getEventsBySearch);
 eventsRouter.post("/", eventController.createEvent);
 eventsRouter.delete("/:id", eventController.deleteEvent);
-eventsRouter.put("/:id",eventController.updateEvent)
+eventsRouter.put("/:id", eventController.updateEvent);
 
 module.exports = eventsRouter;
