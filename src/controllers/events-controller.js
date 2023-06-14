@@ -9,8 +9,8 @@ const getEvents = async (req, res) => {
 };
 
 const getEventsBySearch = async (req, res) => {
-  Anotacao.find(
-    { $text: { $search: req.params.conteudo } },
+  Evento.find(
+    { $text: { $search: req.params.content } },
     { _id: true, __v: false }
   )
     .then((result) => {
@@ -20,7 +20,7 @@ const getEventsBySearch = async (req, res) => {
 };
 
 const createEvent = async (req, res) => {
-  Anotacao.create(req.body)
+  Evento.create(req.body)
     .then((result) => {
       res.status(201).send(result);
     })
@@ -28,7 +28,7 @@ const createEvent = async (req, res) => {
 };
 
 const deleteEvent = async (req, res) => {
-  Anotacao.deleteOne({ _id: req.params.id })
+  Evento.deleteOne({ _id: req.params.id })
     .then((result) => {
       if (result.deletedCount > 0) res.status(200).send("Removido com sucesso");
       else res.status(404).send("Anotação não encontrada");
@@ -37,7 +37,7 @@ const deleteEvent = async (req, res) => {
 };
 
 const updateEvent = async (req, res) => {
-  await Anotacao.findById(req.params.id)
+  await Evento.findById(req.params.id)
     .then((result) => {
       if (result) {
         result.set(req.body);
