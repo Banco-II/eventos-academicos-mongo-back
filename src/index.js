@@ -10,10 +10,11 @@ app.get("/home", (req, res, next) => {
   res.send("Hello!");
 });
 
-app.use("/eventos", eventsRouter);
+app.use("/event", eventsRouter);
 
 const port = process.env.PORT || 4000;
 
 app.listen(port, () => {
   console.log(`Server running in port ${port}`);
 });
+
