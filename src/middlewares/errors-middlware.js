@@ -1,6 +1,6 @@
 const httpStatus = require('http-status');
 
-export function handleApplicationErrors(err, req, res, next) {
+function handleApplicationErrors(err, req, res, next) {
   if (err.name === "ConflictError" || err.name === "DuplicatedEmailError") {
     return res
       .status(httpStatus.CONFLICT)
@@ -30,3 +30,5 @@ export function handleApplicationErrors(err, req, res, next) {
     message: "Internal Server Error",
   });
 }
+
+module.exports = handleApplicationErrors

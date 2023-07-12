@@ -2,7 +2,7 @@ const mongoose = require("../config/database");
 
 const sessoes = new mongoose.Schema(
   {
-    userId: Number,
+    userId: String,
     token: String,
   },
   { collection: "sessions" }

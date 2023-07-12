@@ -3,8 +3,10 @@ const app = express();
 // app.use(express.json());
 const eventsRouter = require("./routes/events-router");
 const cors = require("cors");
+
+const handleApplicationErrors = require("./middlewares/errors-middlware");
 const usersRouter = require("./routes/users-router");
-const { handleApplicationErrors } = require("./middlewares/errors-middlware");
+
 // app.use(cors());
 
 app

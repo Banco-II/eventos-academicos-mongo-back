@@ -34,7 +34,7 @@ function invalidCredentialsError() {
   };
 }
 
-export default {
+module.exports = {
   conflictError,
   duplicatedEmailError,
   unauthorizedError,
